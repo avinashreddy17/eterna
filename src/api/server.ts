@@ -35,7 +35,11 @@ fastify.server.on('upgrade', (request: any, socket: any, head: any) => {
       };
       redisSub.on('message', onMessage);
       ws.on('close', async () => {
-        redisSub.removeListener('message', onMessage);
+        if ((redisSub as any).off) {
+          (redisSub as any).off('message', onMessage);
+        } else {
+          (redisSub as any).removeListener('message', onMessage);
+        }
         await redisSub.unsubscribe(channel);
       });
     })();

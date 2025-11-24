@@ -1,7 +1,5 @@
 import WebSocket from 'ws';
-
-// Use global fetch (Node 18+)
-const safeFetch = global.fetch;
+const safeFetch: any = (globalThis as any).fetch;
 
 async function main() {
   const API_URL = 'http://127.0.0.1:3000';
