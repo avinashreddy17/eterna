@@ -12,6 +12,7 @@
     "build": "tsc",
     "start:api": "node dist/api/server.js",
     "start:worker": "node dist/worker/index.js",
+    "start:all": "concurrently -k \"node dist/api/server.js\" \"node dist/worker/index.js\"",
     "demo": "ts-node src/demo.ts"
   },
   "keywords": [],
@@ -35,6 +36,7 @@
     "@types/pg": "^8.15.6",
     "@types/supertest": "^6.0.3",
     "@types/uuid": "^10.0.0",
+    "concurrently": "^8.2.2",
     "jest": "^30.2.0",
     "nodemon": "^3.1.11",
     "supertest": "^7.1.4",
