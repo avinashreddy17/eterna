@@ -1,0 +1,45 @@
+{
+  "name": "eterna",
+  "version": "1.0.0",
+  "description": "This repository implements a **Mock Solana DEX Order Execution Engine** that simulates routing, quoting, execution latency, retries, and real-time status updates.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon --exec ts-node src/api/server.ts",
+    "worker": "ts-node src/worker/index.ts",
+    "db:setup": "ts-node src/db/setup.ts",
+    "start": "ts-node src/api/server.ts",
+    "build": "tsc",
+    "start:api": "node dist/api/server.js",
+    "start:worker": "node dist/worker/index.js",
+    "demo": "ts-node src/demo.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/websocket": "^11.2.0",
+    "bullmq": "^5.64.1",
+    "dotenv": "^17.2.3",
+    "fastify": "^5.6.2",
+    "ioredis": "^5.8.2",
+    "ws": "^8.18.0",
+    "pg": "^8.16.3",
+    "uuid": "^13.0.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "@types/pg": "^8.15.6",
+    "@types/supertest": "^6.0.3",
+    "@types/uuid": "^10.0.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
